@@ -6,3 +6,72 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.aside-table-container{
+	float: right;
+	display: flex;
+	flex-direction: column;
+	background: rgba(0, 0, 0, 0.25);
+	width: 17rem;
+	padding: 0.5em 0;
+	border-radius: 0.5em;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+.aside-table-container > div{
+	margin: 0;
+	padding: 0.5em 1em;
+	border-bottom: #1e1e1e solid 3px;
+	font-size: 0.8rem;
+	font-weight: 300;
+}
+
+.aside-table-container > div:last-of-type {
+	border-bottom: none;
+}
+
+.aside-table-container .aside-table-thumbnails{
+	display: flex;
+	flex-direction: column;
+}
+
+.aside-table-container .aside-table-thumbnail img{
+	width: 100%;
+	height: auto;
+	max-height: 200px;
+	object-fit: cover;
+	border-radius: 0.25em;
+}
+
+.aside-table-container .aside-table-group-header{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	background-color: rgba(16, 0, 255, 0.25);
+	font-size: 1rem;
+}
+
+.aside-table-container > div:has(strong){
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: ". .";
+}
+
+.aside-table-container > div > strong{
+	font-weight: 700;
+	margin-right: 0.5em;
+}
+
+.aside-table-container > div > ul{
+	margin: 0;
+	padding-left: 1em;
+}
+
+/* Override the default preview-code-block style to float the aside table to the right */
+.markdown-source-view.mod-cm6 .cm-content > [contenteditable=false]:has(.aside-table-container){
+	display: inline;
+	z-index: 100;
+}
